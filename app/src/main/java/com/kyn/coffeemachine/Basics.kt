@@ -1,19 +1,23 @@
 package com.kyn.coffeemachine
 
+
 fun main(){
-    var name = "Kevin"
-    makeCoffee(0, name );
+    val coffe_kyn = CoffeeDetails("Kyn", 1, "small", 0)
+    coffe_kyn.sugarCount=2
+    makeCoffee(coffe_kyn)
 }
+data class CoffeeDetails
+    ( val name: String,
+      var sugarCount: Int,
+      val size: String,
+      val creamAmount: Int)
 
-fun makeCoffee(sugarCount : Int, name: String){
 
-    if(sugarCount ==1){
-        println("${name} drink Coffee with $sugarCount spoon of sugar")
-    }else if (sugarCount > 0){
-        println("${name} drink Coffee with $sugarCount spoons of sugar")
-    }else {
-        println("${name} drink Coffee without sugar")
-    }
+fun makeCoffee( details : CoffeeDetails){
+
+    println("${details.name} drink coffee with ${details.sugarCount} spoons of sugar " +
+            "and ${details.size} size and ${details.creamAmount} spoons of cream")
+
 
 
 }
